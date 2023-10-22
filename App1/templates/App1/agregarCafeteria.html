@@ -1,0 +1,39 @@
+{%extends "App1/base.html"%}
+
+{%load static%}
+
+{%block agregar%}
+
+<section class="py-1">
+    <div class="container my-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2>Ayudanos a ampliar nuestra guia</h2>
+                <p class="lead">Ingresa el nombre, direccion, horario y descripcion de tu cafeteria favorita<br> Recuerda que es una pagina reservada para locales dentro de Montevideo <br> Debes completar todos los campos <br> </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-1">
+    <div class="container my-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+
+                <form method="post">
+                    {% csrf_token %}
+                    <p>Nombre: <input type = "text" name="name">
+                    <p>Direccion: <input typw = "text" name="direccion">
+                    <p>Horario: <input typw = "text" name="horario">
+                    <p>Descripcion: <input typw = "text" name="descripcion"> <br>
+                    <input class="btn btn-lg btn-light" style="background-color:grey" type= "submit" value="Enviar">
+                    <a class="btn btn-lg btn-light" style="background-color:grey" href="{%url "ListaCafeterias" %}">Volver al listado</a>
+                </form>
+                <ul>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{%endblock agregar%}

@@ -1,0 +1,43 @@
+{%extends "App1/base.html"%}
+
+{%load static%}
+
+
+{%block perfil%}
+
+<section class="py-1">
+    <div class="container my-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2>Perfil de {{request.user.username}} </h2>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+<section class="py-1">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+            <h4> Datos </h4>
+                 <table>
+                 {%if request.user.first_name%}
+                 <h5> Nombre: {{request.user.first_name}} </h5>
+                 {%endif%}
+                 {%if request.user.last_name %}
+                 <h5> Apellido: {{request.user.last_name}} </h5>
+                 {%endif%}
+                 <h5> User: {{request.user.username}} </h5>
+                 <h5> E-mail: {{request.user.email}} </h5>
+                 <a class="btn btn-lg btn-light" style="background-color:grey" href="{% url 'EditarPerfil' %}">Editar perfil</a>
+                     
+                 </table>
+            
+
+            </div>
+        </div>
+    </div>
+</section>
+   
+{%endblock perfil%}

@@ -1,0 +1,27 @@
+{%extends "App1/base.html"%}
+
+{%load static%}
+
+
+
+{%block mostrar%}
+<section class="py-1">
+    <div class="container my-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2> Buscar cafeteria por direccion </h2>
+                <p> Ingresa una o mas calles...</p>
+                <form action="" method='POST'>
+                    {%csrf_token%}
+                        <table>
+                           {{buscarFormulario.as_table}}
+                        </table>
+                    <input class="btn btn-lg btn-light" style="background-color:grey" type= "submit" value="Buscar">
+                 
+                </form>
+            </div>
+        </div>
+    </div>
+</section>  
+{%endblock mostrar%}
+

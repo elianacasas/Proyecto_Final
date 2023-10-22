@@ -1,0 +1,27 @@
+{%extends "App1/base.html"%}
+{%load static%}
+
+{%block eliminar%}
+
+
+<section class="py-1">
+    <div class="container my-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+     
+            <h1>Eliminar {{cafeteria.name}} </h1>
+                <form method="post">
+                    {% csrf_token %}
+                    <p>¿Estas seguro que deseas borrar {{cafeteria.name}}? </p>
+                    <input class="btn btn-lg btn-light" style="background-color:grey" type="submit" value="Borrar">
+                    <a class="btn btn-lg btn-light" style="background-color:grey" href="{% url 'ListaCafeterias' %}">Volver al listado</a>
+                </form>
+            
+              
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{%endblock eliminar%}

@@ -1,0 +1,52 @@
+{%extends "App1/base.html"%}
+
+{%load static%}
+
+{%block cafeteriaDetalle%}
+
+<section class="py-1">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+            <h2> {{cafeteria.name}}</h2>
+            {%if cafeteria.imagen%}
+
+                <img src="{{ cafeteria.imagen.url }}" alt="{{ cafeteria.name }} Imagen"  width="300px" height="200px">
+             {%endif%}
+            <table>
+                <h5> {{cafeteria.direccion}} </h5>
+                <h5> {{cafeteria.horario}} </h5>
+                <h5> {{cafeteria.descripcion}} </h5>
+                <a class="btn btn-lg btn-light" style="background-color:grey" href="{% url 'ListaCafeterias' %}">Volver al listado</a>
+                
+            </table>
+            <h2>Comentarios</h2>
+                 {% for comentario in cafeteria.comentarios.all %}
+                  <div class="comentario">
+                  <h4><li>  {{ comentario.contenido }}</li></h4> 
+                  <p>Autor: {{ comentario.autor }} || Fecha: {{ comentario.fecha_creacion }}</p>
+
+                 </div>
+                {% empty %}
+                  <p>Aún no hay comentarios.</p>
+                {% endfor %}
+                {%if request.user.is_authenticated%}
+                <h2>Agregar Comentario</h2>
+                    <form method="post">
+                    {% csrf_token %}
+                      {{ form.as_p }}
+
+                    <input type="submit" value="Agregar Comentario">
+                  </form>
+                 {%endif%}
+                
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+   
+
+{%endblock cafeteriaDetalle%}

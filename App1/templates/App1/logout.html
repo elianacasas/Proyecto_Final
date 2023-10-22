@@ -1,0 +1,20 @@
+{%extends "App1/base.html"%}
+
+{%load static%}
+
+{%block logout%}
+
+<section class="py-1">
+    <div class="container my-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2> Has cerrado sesion </h2> <br>
+                <a class="btn btn-lg btn-light" style="background-color:grey" href="{%url "Login" %}">Iniciar sesion</a>
+                <a class="btn btn-lg btn-light" style="background-color:grey" href="{%url "Inicio" %}">Ir a inicio</a>
+                <a class="btn btn-lg btn-light" style="background-color:grey" href="{%url "ListaCafeterias" %}">Ver guia</a>
+
+            </div>
+        </div>
+    </div>
+</section>
+{%endblock logout%}

@@ -1,0 +1,20 @@
+{%extends "App1/base.html"%}
+
+{%load static%}
+
+{%block postAgregar%}
+
+<section class="py-1">
+    <div class="container my-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2> ¡Muchas gracias por tu aporte! </h2>
+                <li> <a class="btn btn-lg btn-light" style="background-color:grey" href="{%url 'AgregarCafeteria'%}" style="color: black"> Añadir otra</a> </li> 
+                <li><a class="btn btn-lg btn-light" style="background-color:grey" href="{%url 'Buscar'%}" style="color: black"> Buscar cafeteria</a>  </li>
+                <li><a class="btn btn-lg btn-light" style="background-color:grey"  href="{%url 'ListaCafeterias'%}" style="color: black"> Ver guía</a>  </li> </h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+{%endblock postAgregar%}

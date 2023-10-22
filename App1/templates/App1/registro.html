@@ -1,0 +1,29 @@
+{%extends "App1/base.html"%}
+
+{%load static%}
+
+{%block registro%}
+
+
+<section class="py-1">
+    <div class="container my-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+               
+                <h2> {{mensaje}} </h2> <br>
+                <h1> ¡Unite a nuestra comunidad! <h1>
+            <h3>Ingresa los datos para registrarte</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-lg btn-light" style="background-color:grey" type="submit">Registrate</button>
+                    <a class="btn btn-lg btn-light" style="background-color:grey" href="{%url "Login" %}">Ya estoy registrado</a>
+
+                </form>
+            
+              
+            </div>
+        </div>
+    </div>
+</section>
+{%endblock registro%}
