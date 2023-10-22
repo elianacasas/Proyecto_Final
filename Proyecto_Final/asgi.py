@@ -1,5 +1,5 @@
 """
-ASGI config for Tercera_pre_entrega_Casas project.
+ASGI config for Proyecto_Final project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Tercera_pre_entrega_Casas.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Proyecto_Final.settings')
 
 application = get_asgi_application()

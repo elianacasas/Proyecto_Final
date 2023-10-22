@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Tercera_pre_entrega_Casas.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Proyecto_Final')
 
 application = get_wsgi_application()
